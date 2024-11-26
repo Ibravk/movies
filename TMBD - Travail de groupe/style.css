@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+body {
+    font-family: Inria sans;
+}
+
+/* ================================MODAL LOGIN======================================= */
+
+
+#login-dialog {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+.login-dialog__content {
+    width: 410px;
+    height: 608px;
+    background-color: #000000;
+    position: relative;
+    padding: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: auto;
+}
+
+#close-svg {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+
+.login-dialog__switch-buttons-container .login_signup,
+.login-dialog__switch-buttons-container .login_active {
+    width: 146px;
+    height: 44px;
+    font-family: "Inria sans";
+    font-weight: 700;
+    font-size: 24px;
+    border: groove 1px #fff ; 
+    color: #fff;
+    background-color: #000000;
+    padding: auto 25px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-dialog__switch-buttons-container .login_signup {
+    border-radius: 8px 0px 0px 8px;
+
+}
+.login-dialog__switch-buttons-container .login_active {
+    border-radius: 0px 8px 8px 0px;
+
+}
+
+
+
+.login-dialog__switch-buttons-container .login_signup:hover, /* Au survol */
+.login-dialog__switch-buttons-container .login_active:hover {
+    background-color: #CC0000; 
+
+}
+
+.form-field--username,
+.form-field--password {
+    width: 100%;
+    height: 47px;
+    border-radius: 8px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.checkbox-container {
+    padding-top: 20px;
+}
+
+.checkbox-label {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 50% ;
+    
+    
+    
+}
+
+.login-dialog__login-button {
+    width: 100%;
+    height: 47px;
+    color: #fff;
+    background-color: #CC0000;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #CC0000;
+    display: block;
+    margin-top: 25px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.not-member-yet {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.not-member-yet a {
+    color: #CC0000;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+}
+
+
+#close-svg {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+
+
+/* ================================HEADER======================================= */
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #141517;
+    padding-left: 80px;
+}
+
+#logo span {
+    color: #CC0000;
+    text-transform: uppercase;
+}
+
+#logo {
+    color: #ffffff; 
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar {
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    padding-right: 80px;
+    gap: 30px;
+    font-weight: 700px;
+    font-size: 14px;
+    text-transform: uppercase;
+
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #141517;
+}
+
+.navbar a {
+ 
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* ===================BUTTON SEARCH============================================== */
+
+.container_main {
+    width: 1250px;
+    margin: 0 auto;
+    background-color: #191B20;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.container_main .search_input {
+    border-radius: 4px 0px 0px 4px;
+    border: 2px #ffffff; 
+    width: 180px;
+    height: 30px;
+    
+}
+
+.container_main button {
+    background-color: #CC0000;
+    border-radius: 0 4px 4px 0px;
+    border: 2px;
+    width: 50px;
+}
+
+/* ================================POPUP======================================= */
+
+.movie-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000000;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  } 
+  
+  .popup-content {
+    background: #000000;
+    display: flex;
+    padding: 20px;
+    margin-right: 50px;
+    position: relative;
+    font-size: 16px;
+    font-family: Inria sans;
+    font-weight: 300;
+    width: 740px;
+    color: #fff;
+    height: 526px;
+    border-radius: 10px;
+    text-align: center;
+    
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    color: #fff;
+    left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .popup-poster {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    margin-top: 60px;
+    margin-left: 35px;
+    width: 235px;
+    height: 350px;
+    border: #fff solid 1px;
+   
+  }
+  
+  .popup-title {
+    margin: 10px;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-left: 30px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: Inria sans;
+    color: #CC0000;
+  }
+
+  .date_popup {
+    font-family: Inria sans;
+    text-align: left;
+    margin-left: 35px;
+    font-weight: 700;
+    font-size: 17px;
+    left: 2px;
+    color: #E9E9E9;
+  }
+
+  .vote_averagepop {
+    color: #CC0000;
+    font-family: Inter;
+    font-weight: 700;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 30px;
+  }
+  
+  .popup-overview {
+    font-size: 16px;
+    color: #333;
+    margin-top: 25px;
+    margin-left: 30px;
+    color: #fff;
+    font-family: Inria sans;
+    text-align: left;
+  }
+
+  .star-iconModal {
+    justify-content: flex-start;
+    display: flex;
+    width: 21px;
+    height: 21px;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  .popup-genres {
+    font-family: Inria sans;
+    font-weight: 700;
+    font-size: 14px;
+    color: #E9E9E9;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    text-transform: uppercase;
+  }
+
+  .popup-actors {
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-family: Inria sans;
+    text-align: left;
+    color: #E9E9E9;
+    ;
+  }
+  
+
+
+/* =====================BUTTON NAVIGATION ============================================ */ 
+
+
+
+.result-swiper-buttons {
+    position: absolute; /* Les boutons restent visibles même lors du défilement */
+    display: flex;
+    justify-content: space-around;
+}
+
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-370%);
+    margin-left: 1020px;
+}
+
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-370%);
+}
+
+/* =====================/* Styling for the tooltip/modal =========================*/
+
+/* Styling for the tooltip/modal */
+.movie-info-tooltip {
+    position: absolute;
+    bottom: 2px;
+    width: 234px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    font-size: 13px;
+    display: flex; /* Ajouter flexbox */
+    display: none; /* Hidden by default */
+    z-index: 1;
+    flex-direction: column; /* Aligner les éléments verticalement */
+    justify-content: flex-start; /* Placer les éléments vers le bas */
+    align-items: center; 
+
+  }
+  
+  .swiper-slide {
+    position: relative;
+  }
+  
+  .movie-info-tooltip h3 {
+    font-family: Inter sans-serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .movie-info-tooltip .date_rel {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #B0B0B0;
+    ;
+  }
+
+  .movie-info-tooltip .genre {
+    font-family: Inter, sans-serif;
+    font-weight: 500px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .star-icon {
+    width: 30px;
+    margin: 10px 0;
+  }
+
+  .movie-info-tooltip .vote_average {
+    font-family: Inter, sans-serif;
+    color: #CC0000;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+
+/* =====================SWIPER DESIGN ============================================ */
+
+.results__swiper {
+
+  height: 350px; 
+  overflow: hidden;
+  
+}
+
+.movie-poster {
+  width: 235x; /* Image prend la largeur du slide */
+  height: 350px;
+  object-fit: contain;
+}
+
+/* =====================SECTION RESULTS============================================== */
+
+.results {
+    background-color: #191B20;
+    width: 1250px;
+    height: 380px;
+    margin: 0 auto;
+    padding: 100px;
+    
+}
+
+.results h2 {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    padding-bottom: 8px;
+ 
+}
+
+/* ====================================LATEST SWIPER==================================== */
+
+.Latest_releases {
+
+    background-color: #191B20;
+    width: 1250px;
+    margin: 0 auto;
+    padding: 100px;
+    padding-top: 130px;
+}
+
+.Latest_releases h2 {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    padding-bottom: 8px;
+}
+
+/* ====================================GENRE_LIST_ITEM==================================== */
+
+.genre_list_item {
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.genre_list_item:hover {
+
+    background-color: #CC0000;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* ====================================LAST SWIPER==================================== */
+
+.last_swipper {
+    background-color: #191B20;
+    width: 1250px;
+    margin: 0 auto;
+    padding: 100px;
+    padding-top: 5px;
+}
+
+.last_swipper h1 {
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    padding: 50px;
+    padding-bottom: 70px;
+}
+
+.genre_listcontainer {
+    width: 400px; 
+    height: 20px;
+    padding-left: 150px;
+
+}
+
+
+.results_swiper h2 {
+
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+color: #ffffff;
+padding-top: 40px;
+padding-bottom: 8px;
+} 
+
+.results_swiper {
+    margin: 0 auto;
+}
+
+
+.genre_list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+}
+
+.genre_list li {
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400px;
+    gap: 5px;
+    padding-left: 40px;
+}
+
+.genre_bar {
+
+    border: 1px solid #ffffff;
+    width: 550px;
+    margin: 20px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =====================FOOTER============================================== */
+
+.footer_div {
+    max-width: 1250px;
+    margin: 0 auto; 
+    padding: 40px 20px;
+    background-color: #141517;
+    display: flex;
+    padding-left: 80px;
+    justify-content: space-between
+}
+
+.footer_nav li {
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer_nav a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer_nav{
+    font-weight: 300px;
+    font-size: 14px;
+    color: #b8b8b8;
+    justify-content: space-between;
+    display: flex;
+    margin: 0 auto;
+    gap: 25px;
+    font-weight: 700px;
+    text-transform: uppercase;
+}
+
+.footer_nav #end {
+   margin-left: 180px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+    <title>TMBD</title>
+
+</head>
+    <!-- ===========================HEADER========================================== -->
+<body>
+<!-- Bouton pour ouvrir le popup d'inscription/connexion -->
+<header id="header">
+    <div class="container">
+        <div class="logo">
+            <a href="" id="logo"><span>BE</span>MOVIES</a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#search">Search</a></li>
+            <li><a href="#latest">Latest</a></li>
+            <li><a href="#genre">Genres</a></li>
+            <li><a href="#" id="open-register">Register</a></li>
+            <li><a href="#" id="open-signin">Signin</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- ===========================MODAL==================================== -->
+ 
+<main class="main">
+    <!-- Login/signup Modal dialog box -->
+    <dialog id="login-dialog" class="login-dialog">
+
+        <div class="login-dialog__content">
+
+            <div class="login-dialog__close-button" id="login-close-button">
+                <img src="close.svg" alt="Close Login Dialog" id="close-svg"/>
+            </div>
+
+            <div class="login-dialog__form-container">
+                
+                <div class="login-dialog__switch-buttons-container">
+                    <button class="login_signup">SIGN UP</button>
+                    <button class="login_active">LOGIN</button>
+                </div>
+
+                <form class="login-dialog__form">
+                    <input type="text" placeholder="Username" class="form-field--username" required/>
+                    <input type="password" placeholder="Password" class="form-field--password" required/>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox"name="remember" id="remember" class="login-dialog__checkbox"/>
+                        <label for="remember"class="checkbox-label">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="login-dialog__login-button">LOGIN</button>
+                </form>
+
+                <a href="#" class="forgot-password">I forgot my password</a>
+                <p class="not-member-yet">Not a member yet ? <a hef="#"> Sign up</a></p>
+            </div>
+        </div>
+    </dialog>
+</main>
+
+
+
+<!-- =======================BUTTON SEARCH================================ -->
+
+<section class="search">
+    <div class="container_main">
+        <input type="text" class="search_input" placeholder="Search for a movie">
+        <button type="submit">
+            <img src="fleche.svg" alt="">
+        </button>
+    </div>
+     
+
+
+    <!-- ==========================SECTION RESULTS======================== -->
+
+    <section class="results" id="search">
+
+        <h2>Results for<span></span></h2>
+
+             <!-- Slider main container -->
+
+            <div class="results__swiper">
+
+                <div class="swiper-container-result swiper">
+
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                    </div>
+                    
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="result-swiper-buttons">
+                    <img class="swiper-button-prev" src="nav-arrow-left.svg"/>
+                    <img class="swiper-button-next" src="nav-arrow-right.svg"/>
+                </div>
+            </div>
+    </section>
+
+    <!-- =================================LATEST RELEASE=================== -->
+
+
+
+    <section class="Latest_releases" id="latest">
+
+        <h2>Latest release<span></span></h2>
+
+             <!-- Slider main container -->
+
+            <div class="results__swiper">
+
+                <div class="swiper-container-result swiper">
+
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                    </div>
+                    
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="result-swiper-buttons">
+                    <img class="swiper-button-prev" src="nav-arrow-left.svg"/>
+                    <img class="swiper-button-next" src="nav-arrow-right.svg"/>
+                </div>
+
+            </div>
+
+    </section>
+
+
+    <!-- ==============================LAST SWIPER========================== -->
+
+    <section class="last_swipper" id="genre">
+
+        <h1 class="genre_title">Movies by genre <span></span></h1>
+
+        <div class="genre_listcontainer">
+
+            <ul class="genre_list">
+                <li class="genre_list_item" data-genreid="35">Comedy</li>
+                <li class="genre_list_item">Drama</li>
+                <li class="genre_list_item">Action</li>
+                <li class="genre_list_item">Romance</li>
+                <li class="genre_list_item">Fantasy</li>
+                <li class="genre_list_item">Animation</li>
+            </ul>
+
+            <div class="genre_bar"></div>
+
+        </div>
+
+
+             <!-- Slider main container -->
+
+        <div class="results_swiper">
+
+            <h2>Comedy<span></span></h2>
+
+                <div class="swiper-container-result swiper">
+
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                    </div>
+                    
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="result-swiper-buttons">
+                    <img class="swiper-button-prev" src="nav-arrow-left.svg"/>
+                    <img class="swiper-button-next" src="nav-arrow-right.svg"/>
+                </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================Footer==================================== -->
+
+
+    <section class="footer">
+        <div class="footer_div">
+            <div class="logo">
+                <a href="" id="logo"><span>BE</span>movies</a>
+           </div>
+            <ul class="footer_nav">
+                <li><a href="#search">search</a></li>
+                <li><a href="#latest">latest</a</li>
+                <li><a href="#genre">genres</a></li> 
+                <li><a href="">register</a></li>
+                <li><a href="">signin</a></li>
+                <li id="end">@2024 - All rights reserve</li>
+            </li>
+        </div>
+    </section>
+
+
+   <!-- ====================================SCRIPT==================================== -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="app.js"></script> 
+</body>
+</html>
