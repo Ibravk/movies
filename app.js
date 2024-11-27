@@ -93,6 +93,60 @@ const fetchComedyMovies = async () => {
   }
 };
 
+// Fonction pour charger les films d'un genre spécifique
+const fetchMoviesByGenre = async (genreId) => {
+  try {
+    const response = await fetch(`${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}`);
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error(`Erreur lors de la récupération des films pour le genre ${genreId} :`, error);
+  }
+};
+
+// Fonction pour afficher les films d'un genre sélectionné
+const displayMoviesByGenre = async (genreId, genreName) => {
+  const movies = await fetchMoviesByGenre(genreId);
+  const swiperWrapper = document.querySelector('.last_swipper .swiper-wrapper');
+  const genreTitle = document.querySelector('.last_swipper h2');
+
+  // Met à jour le titre du genre sélectionné
+  genreTitle.textContent = `${genreName}`;
+
+  // Vide le conteneur actuel
+  swiperWrapper.innerHTML = '';
+
+  if (movies) {
+    movies.forEach((movie) => {
+      const slideElement = createMovieSlide(movie);
+      swiperWrapper.appendChild(slideElement);
+    });
+
+    // Initialise un nouveau Swiper pour ce genre
+    new Swiper('.last_swipper .swiper-container-result', {
+      loop: true,
+      slidesPerView: 4,
+      spaceBetween: 1,
+      navigation: {
+        nextEl: '.last_swipper .swiper-button-next',
+        prevEl: '.last_swipper .swiper-button-prev',
+      },
+    });
+  }
+};
+
+// Ajoute un gestionnaire d'événements aux éléments de la liste de genres
+document.querySelectorAll('.genre_list_item').forEach((genreItem) => {
+  genreItem.addEventListener('click', () => {
+    const genreId = genreItem.dataset.genreid; // ID du genre
+    const genreName = genreItem.textContent; // Nom du genre
+    if (genreId) {
+      displayMoviesByGenre(genreId, genreName);
+    }
+  });
+});
+
+
 // ============================TOOLTIP===================================================
 
 // Fonction pour créer un slide avec un tooltip
@@ -238,7 +292,7 @@ const showMoviePopup = async (movie) => {
           <p class="vote_averagepop"></p>
           <p class="popup-genres"></p>
           <p class="popup-overview"></p>
-          <p class="popup-actors"></p> <!-- Section des acteurs principaux -->
+          <p class="popup-actors"></p> 
         </div>
       </div>`;
     document.body.appendChild(popup);
